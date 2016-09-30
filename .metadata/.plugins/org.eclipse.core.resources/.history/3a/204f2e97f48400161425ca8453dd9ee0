@@ -1,0 +1,68 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
+
+public class Interfaz {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Interfaz window = new Interfaz();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Interfaz() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setBounds(327, 228, 117, 29);
+		frame.getContentPane().add(btnAceptar);
+		
+		textField = new JTextField();
+		textField.setBounds(103, 56, 296, 28);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblIntroduceInstruccin = new JLabel("Introduce instrucción");
+		lblIntroduceInstruccin.setBounds(31, 28, 141, 16);
+		frame.getContentPane().add(lblIntroduceInstruccin);
+		
+		JLabel lblResultado = new JLabel("Resultado");
+		lblResultado.setBounds(31, 96, 141, 16);
+		frame.getContentPane().add(lblResultado);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(105, 124, 294, 92);
+		frame.getContentPane().add(textPane);
+	}
+}

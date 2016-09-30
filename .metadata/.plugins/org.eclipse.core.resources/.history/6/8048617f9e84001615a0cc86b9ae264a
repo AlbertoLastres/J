@@ -1,0 +1,67 @@
+package BorderOther;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JComboBox;
+import java.awt.BorderLayout;
+import javax.swing.JToolBar;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JTable;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.ComponentOrientation;
+
+public class BorderOther {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BorderOther window = new BorderOther();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public BorderOther() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 413, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel lblMenuEditarNavegar = new JLabel("  Menu  Editar  Navegar  Buscar  Ventanas  Ayuda");
+		lblMenuEditarNavegar.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblMenuEditarNavegar, BorderLayout.NORTH);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(null);
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		
+		JButton btnNewButton = new JButton("New button");
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		panel.add(btnNewButton_1);
+	}
+
+}

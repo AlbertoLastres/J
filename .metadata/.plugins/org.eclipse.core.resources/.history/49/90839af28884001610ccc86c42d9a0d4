@@ -1,0 +1,67 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.JCheckBox;
+
+public class FlowLayout {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FlowLayout window = new FlowLayout();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public FlowLayout() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 20, 20));
+		
+		JButton btnBoton = new JButton("Boton1");
+		frame.getContentPane().add(btnBoton);
+		
+		textField = new JTextField();
+		frame.getContentPane().add(textField);
+		textField.setColumns(20);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Hombre");
+		frame.getContentPane().add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Mujer");
+		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("Ejemplo");
+		frame.getContentPane().add(chckbxNewCheckBox);
+		
+		JButton btnNewButton = new JButton("Boton2");
+		btnNewButton.setToolTipText("Boton2");
+		frame.getContentPane().add(btnNewButton);
+	}
+
+}

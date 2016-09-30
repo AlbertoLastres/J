@@ -1,0 +1,87 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
+import java.awt.FlowLayout;
+import javax.swing.JCheckBox;
+import javax.swing.SwingConstants;
+import java.awt.BorderLayout;
+
+public class Interfaz {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Interfaz window = new Interfaz();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Interfaz() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 450, 98);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblNombre = new JLabel("Introduzca el nombre del archivo que desea borrar");
+		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblNombre, BorderLayout.NORTH);
+		
+		textField = new JTextField();
+		frame.getContentPane().add(textField, BorderLayout.CENTER);
+		textField.setColumns(10);
+		
+		JLabel lblApellidos = new JLabel("Apellidos");
+		frame.getContentPane().add(lblApellidos);
+		
+		textField_2 = new JTextField();
+		frame.getContentPane().add(textField_2);
+		textField_2.setColumns(13);
+		
+		JLabel lblNewLabel = new JLabel("Edad");
+		frame.getContentPane().add(lblNewLabel);
+		
+		textField_3 = new JTextField();
+		frame.getContentPane().add(textField_3);
+		textField_3.setColumns(2);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("Alergico");
+		frame.getContentPane().add(chckbxNewCheckBox);
+		
+		textField_1 = new JTextField();
+		textField_1.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Aceptar");
+		frame.getContentPane().add(btnNewButton, BorderLayout.SOUTH);
+	}
+}

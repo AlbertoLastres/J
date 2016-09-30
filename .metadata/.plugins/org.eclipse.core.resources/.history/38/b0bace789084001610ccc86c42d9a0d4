@@ -1,0 +1,73 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class PracticaUno {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PracticaUno window = new PracticaUno();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public PracticaUno() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 321, 436);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(6, 32, 309, 68);
+		frame.getContentPane().add(panel);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		textField = new JTextField();
+		panel.add(textField);
+		textField.setColumns(4);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(6, 112, 309, 278);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(new GridLayout(4, 4, 0, 0));
+		
+		JButton button = new JButton("1");
+		panel_1.add(button);
+		
+		JButton button_1 = new JButton("2");
+		panel_1.add(button_1);
+		
+		JButton button_2 = new JButton("3");
+		panel_1.add(button_2);
+		
+		JButton btnNewButton = new JButton("C");
+		panel_1.add(btnNewButton);
+	}
+}

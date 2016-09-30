@@ -1,0 +1,75 @@
+package BorderOther;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JComboBox;
+import java.awt.BorderLayout;
+import javax.swing.JToolBar;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JTable;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.ComponentOrientation;
+import java.awt.Font;
+import java.awt.Color;
+
+public class BorderOther {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BorderOther window = new BorderOther();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public BorderOther() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 347, 155);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(null);
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		
+		JButton btnNewButton_2 = new JButton("Cancelar");
+		panel.add(btnNewButton_2);
+		
+		JButton btnNewButton = new JButton("No Guardar");
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Guardar");
+		panel.add(btnNewButton_1);
+		
+		JLabel lbldesaGuardarLos = new JLabel("¿Deséa guardar los cambios efectuados \nen C\\Ajustes.txt?");
+		lbldesaGuardarLos.setBorder(null);
+		lbldesaGuardarLos.setBackground(Color.WHITE);
+		lbldesaGuardarLos.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lbldesaGuardarLos.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lbldesaGuardarLos, BorderLayout.CENTER);
+	}
+
+}
